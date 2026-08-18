@@ -400,15 +400,7 @@
       display: inline-block;
     }
 
-    /* ================= GAME FORM STYLES ================= */
-    .game-hero-header {
-      padding: 1.25rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 900;
-    }
-
+    /* GAME FORM STYLES */
     .game-body-container {
       padding: 2rem 1.5rem;
       min-height: 480px;
@@ -427,7 +419,6 @@
       position: relative;
     }
 
-    /* Form Fields */
     .form-group-pro {
       margin-bottom: 1.1rem;
       text-align: right;
@@ -450,13 +441,6 @@
       background: #0f172a;
       color: #fff;
       font-size: 0.95rem;
-      transition: border 0.2s;
-    }
-
-    .form-group-pro input:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 10px var(--primary-glow);
     }
 
     .pro-submit-btn {
@@ -480,110 +464,29 @@
       filter: brightness(1.1);
     }
 
-    /* PLATFORM SELECTOR ICONS */
-    .platform-selector {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 1.25rem;
-    }
+    /* BRAND THEMES */
+    .roblox-theme { background: linear-gradient(180deg, #191b1d 0%, #111215 100%); color: white; }
+    .roblox-card { background: #1e2024; border: 2px solid #2e3035; }
 
-    .platform-chip {
-      background: #1e293b;
-      border: 1px solid #334155;
-      padding: 0.4rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #94a3b8;
-      cursor: pointer;
-    }
+    .fortnite-theme { background: radial-gradient(circle, #2e1065 0%, #0c0414 100%); color: white; }
+    .fortnite-card { background: rgba(28, 15, 48, 0.95); border: 2px solid #8b5cf6; }
 
-    .platform-chip.selected {
-      background: var(--primary);
-      color: white;
-      border-color: #60a5fa;
-    }
+    .pubg-theme { background: #121212; background-image: radial-gradient(#27272a 1px, transparent 1px); background-size: 16px 16px; color: white; }
+    .pubg-card { background: #1a1a1e; border: 2px solid #f59e0b; }
 
-    /* SPECIFIC BRAND THEMES */
-    /* 1. ROBLOX */
-    .roblox-theme {
-      background: linear-gradient(180deg, #191b1d 0%, #111215 100%);
-      color: white;
-    }
-    .roblox-card {
-      background: #1e2024;
-      border: 2px solid #2e3035;
-    }
+    .ea-theme { background: radial-gradient(circle, #022c15 0%, #03140a 100%); color: white; }
+    .ea-card { background: #062013; border: 2px solid #00e676; }
 
-    /* 2. FORTNITE */
-    .fortnite-theme {
-      background: radial-gradient(circle, #2e1065 0%, #0c0414 100%);
-      color: white;
-    }
-    .fortnite-card {
-      background: rgba(28, 15, 48, 0.95);
-      border: 2px solid #8b5cf6;
-      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
-    }
+    .minecraft-theme { background: #1b2616; color: white; }
+    .minecraft-card { background: #25331e; border: 3px solid #52a435; }
 
-    /* 3. PUBG */
-    .pubg-theme {
-      background: #121212;
-      background-image: radial-gradient(#27272a 1px, transparent 1px);
-      background-size: 16px 16px;
-      color: white;
-    }
-    .pubg-card {
-      background: #1a1a1e;
-      border: 2px solid #f59e0b;
-    }
+    .brawl-theme { background: radial-gradient(circle, #451a03 0%, #1e0b02 100%); color: white; }
+    .brawl-card { background: #2d1204; border: 2px solid #f59e0b; }
 
-    /* 4. EA SPORTS FC 24 */
-    .ea-theme {
-      background: radial-gradient(circle, #022c15 0%, #03140a 100%);
-      color: white;
-    }
-    .ea-card {
-      background: #062013;
-      border: 2px solid #00e676;
-      box-shadow: 0 0 25px rgba(0, 230, 118, 0.25);
-    }
+    .valorant-theme { background: #0f1923; color: white; }
+    .valorant-card { background: #172430; border: 2px solid #ff4655; }
 
-    /* 5. MINECRAFT */
-    .minecraft-theme {
-      background: #1b2616;
-      background-image: repeating-linear-gradient(0deg, #172013, #172013 20px, #1b2616 20px, #1b2616 40px);
-      color: white;
-    }
-    .minecraft-card {
-      background: #25331e;
-      border: 3px solid #52a435;
-      box-shadow: 0 8px 0 #182413;
-    }
-
-    /* 6. BRAWL STARS */
-    .brawl-theme {
-      background: radial-gradient(circle, #451a03 0%, #1e0b02 100%);
-      color: white;
-    }
-    .brawl-card {
-      background: #2d1204;
-      border: 2px solid #f59e0b;
-      box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
-    }
-
-    /* 7. VALORANT & STEAM */
-    .valorant-theme {
-      background: #0f1923;
-      color: white;
-    }
-    .valorant-card {
-      background: #172430;
-      border: 2px solid #ff4655;
-    }
-
-    /* CHAT & WHATSAPP STYLES */
+    /* CHAT STYLES */
     .chat-container {
       background: #0b141a;
       color: #e9edef;
@@ -600,7 +503,6 @@
       margin-bottom: 0.85rem;
       font-size: 0.95rem;
       line-height: 1.6;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
     .chat-time {
       font-size: 0.7rem;
@@ -668,7 +570,7 @@
       line-height: 1.5;
     }
 
-    /* TOAST NOTIFICATION */
+    /* TOAST */
     .toast-msg {
       position: fixed;
       bottom: 2rem;
@@ -794,7 +696,7 @@
         </div>
       </div>
 
-      <!-- ================= CHALLENGE QUESTIONS (THINKING SCENARIOS) ================= -->
+      <!-- ================= CHALLENGE SCENARIOS ================= -->
 
       <!-- Q1: WHATSAPP FAKE FRIEND OTP -->
       <div id="scenario-chall_friend_otp" class="simulator-window challenge-view">
@@ -1061,9 +963,9 @@
         </div>
       </div>
 
-      <!-- ================= EXPLANATION SCENARIOS (FOR TEACHER DEMOS) ================= -->
+      <!-- ================= EXPLANATION SCENARIOS (TEACHER DEMOS) ================= -->
 
-      <!-- 1. ROBLOX -->
+      <!-- 1. ROBLOX EXPLANATION -->
       <div id="scenario-roblox" class="simulator-window expl-view" style="display: none;">
         <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="1">free-robux-generator-2026.xyz<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container roblox-theme">
@@ -1071,49 +973,63 @@
             <div style="color: #00a2ff; font-weight: 900; font-size: 1.3rem; margin-bottom: 0.5rem;">ROBLOX REWARDS</div>
             <h2 style="font-size: 1.25rem; color: #fff; margin-bottom: 1rem;">🎁 مولد 10,000 روبوكس (R$) مجاني</h2>
             <div class="form-group-pro">
+              <label>اسم المستخدم في روبلوكس:</label>
+              <input type="text" value="Gamer_Roblox_2026" readonly>
+            </div>
+            <div class="form-group-pro">
               <label class="red-flag-target" data-flag="2" style="color: #f87171;">كلمة المرور (Password):<span class="flag-marker">2</span></label>
               <input type="password" value="••••••••••••" readonly>
             </div>
-            <button class="pro-submit-btn" style="background: #00a2ff; color: white;">إرسال الروبوكس لحسابي</button>
+            <div class="red-flag-target" data-flag="3" style="background: rgba(239, 68, 68, 0.2); padding: 0.6rem; border-radius: 6px; margin: 0.75rem 0; font-size: 0.8rem; color: #fca5a5;">
+              ⚡ خطوة أخيرة: أدخل رقم هاتف ولي أمرك لتأكيد الروبوكس!
+              <span class="flag-marker">3</span>
+            </div>
+            <button class="pro-submit-btn" style="background: #00a2ff; color: white;" onclick="alert('محاكاة: في الواقع يتم سرقة الحساب وسحب رصيد الهاتف!')">إرسال 10,000 روبوكس لحسابي</button>
           </div>
         </div>
       </div>
 
       <!-- 2. FC 24 EXPL -->
       <div id="scenario-fc24_expl" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="fc1">ea-sports-fc24-coins.cc<span class="flag-marker">fc1</span></span></div></div>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="fc1">ea-sports-fc24-coins.cc<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container ea-theme">
           <div class="pro-glass-card ea-card">
             <h2 style="color: #00e676; font-size: 1.3rem; margin-bottom: 0.5rem;">⚽ FC 24: شحن 1,000,000 كوينز</h2>
-            <p style="font-size: 0.85rem; color: #a7f3d0; margin-bottom: 1rem;">شرح كيف يسرق المحتالون حسابات فيفا عبر طلب أكواد الأمان الاحتياطية لنهب النادي.</p>
+            <p style="font-size: 0.85rem; color: #a7f3d0; margin-bottom: 1rem;">سجل الدخول بحساب EA Web App لاستلام الكوينز في ناديك:</p>
+            <div class="form-group-pro">
+              <label class="red-flag-target" data-flag="fc2" style="color: #fca5a5;">رمز الأمان الاحتياطي (Backup Code):<span class="flag-marker">2</span></label>
+              <input type="password" value="789012" readonly>
+            </div>
+            <button class="pro-submit-btn" style="background: #00e676; color: #052e16;" onclick="alert('محاكاة: السارق يدخل النادي ويسرق جميع اللاعبين والكوينز!')">شحن 1,000,000 كوينز</button>
           </div>
         </div>
       </div>
 
       <!-- 3. FORTNITE -->
       <div id="scenario-fortnite" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="5">fortnite-vbucks-gift.top<span class="flag-marker">5</span></span></div></div>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="5">fortnite-vbucks-gift.top<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container fortnite-theme">
           <div class="pro-glass-card fortnite-card">
             <h2 style="color: #fbbf24; font-size: 1.3rem; margin-bottom: 0.5rem;">🎉 13,500 V-Bucks وسكنات نادرة</h2>
             <div class="form-group-pro">
-              <label class="red-flag-target" data-flag="6" style="color: #f87171;">كود التحقق الثنائي (2FA):<span class="flag-marker">6</span></label>
+              <label class="red-flag-target" data-flag="6" style="color: #f87171;">كود التحقق الثنائي (2FA Code):<span class="flag-marker">2</span></label>
               <input type="password" value="123456" readonly>
             </div>
-            <button class="pro-submit-btn" style="background: #8b5cf6; color: white;">شحن الـ V-Bucks</button>
+            <button class="pro-submit-btn" style="background: #8b5cf6; color: white;" onclick="alert('محاكاة: يتم الاستيلاء على حساب إبيك جيمز وتغيير الإيميل!')">شحن الـ V-Bucks الآن</button>
           </div>
         </div>
       </div>
 
       <!-- 4. PUBG -->
       <div id="scenario-pubg" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="8">pubgmobile-lucky-spin.cc<span class="flag-marker">8</span></span></div></div>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="8">pubgmobile-lucky-spin.cc<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container pubg-theme">
           <div class="pro-glass-card pubg-card">
             <h2 style="color: #f59e0b; font-size: 1.3rem; margin-bottom: 0.5rem;">🎯 عجلة الحظ: ربحت 8,100 شدة UC</h2>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">سجل الدخول بحسابك لاستلام الجائزة فوراً:</p>
             <div class="red-flag-target" data-flag="9" style="margin: 1rem 0;">
-              <button class="pro-submit-btn" style="background: #1877f2; color: white;">تسجيل الدخول بـ Facebook</button>
-              <span class="flag-marker">9</span>
+              <button class="pro-submit-btn" style="background: #1877f2; color: white;" onclick="alert('محاكاة: نافذة تسجيل الدخول مزيفة لسرقة حساب الفيسبوك!')">📘 الدخول بـ Facebook</button>
+              <span class="flag-marker">2</span>
             </div>
           </div>
         </div>
@@ -1121,53 +1037,74 @@
 
       <!-- 5. MINECRAFT -->
       <div id="scenario-minecraft" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="mc1">minecraft-free-cape-minecoins.xyz<span class="flag-marker">mc1</span></span></div></div>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="mc1">minecraft-free-cape-minecoins.xyz<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container minecraft-theme">
           <div class="pro-glass-card minecraft-card">
             <h2 style="color: #52a435; font-size: 1.3rem; margin-bottom: 0.5rem;">🟩 كيب ماينكرافت و 5000 Minecoins</h2>
-            <p style="font-size: 0.85rem; color: #dcfce7; margin-bottom: 1rem;">يوضح كيف تسرق مواقع الكيبات حسابات مايكروسوفت وماينكرافت الأصلية.</p>
+            <div class="form-group-pro">
+              <label class="red-flag-target" data-flag="mc2" style="color: #fca5a5;">كلمة مرور حساب مايكروسوفت (Microsoft Password):<span class="flag-marker">2</span></label>
+              <input type="password" value="••••••••••••" readonly>
+            </div>
+            <button class="pro-submit-btn" style="background: #52a435; color: white;" onclick="alert('محاكاة: يتم سرقة حساب مايكروسوفت ولعبة ماينكرافت الأصلية!')">تفعيل الكيب والعملات</button>
           </div>
         </div>
       </div>
 
       <!-- 6. BRAWL STARS EXPL -->
       <div id="scenario-brawl_expl" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="br1">supercell-brawlstars-gems.xyz<span class="flag-marker">br1</span></span></div></div>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="br1">supercell-brawlstars-gems.xyz<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container brawl-theme">
           <div class="pro-glass-card brawl-card">
-            <h2 style="color: #f59e0b; font-size: 1.3rem; margin-bottom: 0.5rem;">⭐ براول ستارز 2000 جوهرة</h2>
-            <p style="font-size: 0.85rem; color: #fde68a; margin-bottom: 1rem;">يشرح خطورة إعطاء رمز التحقق المرسل للإيميل Supercell ID.</p>
+            <h2 style="color: #f59e0b; font-size: 1.3rem; margin-bottom: 0.5rem;">⭐ براول ستارز: 2,000 جوهرة</h2>
+            <div class="form-group-pro">
+              <label class="red-flag-target" data-flag="br2" style="color: #fca5a5;">كود Supercell ID المرسل لإيميلك:<span class="flag-marker">2</span></label>
+              <input type="text" value="984210" readonly>
+            </div>
+            <button class="pro-submit-btn" style="background: #f59e0b; color: #451a03;" onclick="alert('محاكاة: السارق يسيطر على حساب Supercell ID بالكامل!')">استلام الجواهر</button>
           </div>
         </div>
       </div>
 
       <!-- 7. VALORANT -->
       <div id="scenario-valorant" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="val1">valorant-riot-vp-generator.cc<span class="flag-marker">val1</span></span></div></div>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="val1">valorant-riot-vp-generator.cc<span class="flag-marker">1</span></span></div></div>
         <div class="game-body-container valorant-theme">
           <div class="pro-glass-card valorant-card">
             <h2 style="color: #ff4655; font-size: 1.3rem; margin-bottom: 0.5rem;">🔴 فالورانت: 10,000 VP وسكنات فاندال</h2>
-            <p style="font-size: 0.85rem; color: #fecaca; margin-bottom: 1rem;">يوضح كيف تتم سرقة حسابات Riot Games عبر صفحات الدخول الزائفة.</p>
+            <div class="form-group-pro">
+              <label class="red-flag-target" data-flag="val2" style="color: #fca5a5;">اسم وكلمة مرور حساب Riot Games:<span class="flag-marker">2</span></label>
+              <input type="password" value="••••••••••••" readonly>
+            </div>
+            <button class="pro-submit-btn" style="background: #ff4655; color: white;" onclick="alert('محاكاة: يتم سرقة حساب Riot Games الخاص بك!')">شحن نقاط VP</button>
           </div>
         </div>
       </div>
 
-      <!-- SERVICES -->
+      <!-- SERVICES EXPLANATION -->
       <div id="scenario-aramex" class="simulator-window expl-view" style="display: none;">
-        <div style="background: #e31837; color: white; padding: 2rem; text-align: center;">
-          <h2>📦 نموذج أرامكس: فخ الـ 7.5 ريال لسرقة البطاقة</h2>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="ax1">aramex-sa-delivery.xyz<span class="flag-marker">1</span></span></div></div>
+        <div style="background: #e31837; color: white; padding: 1.25rem; font-weight: bold;">aramex | خدمة التوصيل السريع</div>
+        <div style="padding: 2rem; background: #f8fafc; text-align: center; color: #1e293b;">
+          <p class="red-flag-target" data-flag="ax2" style="margin-bottom: 1rem; font-size: 1rem;"><strong>عميلنا العزيز،</strong> طردك معلق ويلزم دفع 7.50 ريال لتأكيد العنوان.<span class="flag-marker">2</span></p>
+          <button class="pro-submit-btn" style="background: #e31837; color: white; max-width: 350px; margin: 0 auto;" onclick="alert('محاكاة: فخ المبلغ البسيط لسرقة أرقام البطاقة البنكية!')">دفع 7.50 ريال وتأكيد العنوان</button>
         </div>
       </div>
 
       <div id="scenario-netflix" class="simulator-window expl-view" style="display: none;">
-        <div style="background: #000; color: #e50914; padding: 2rem; text-align: center;">
-          <h2>🎬 نموذج نتفليكس: تزييف الرابط (netfl1x)</h2>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="nx1">netfl1x-subscription-update.cc<span class="flag-marker">1</span></span></div></div>
+        <div style="background: #000; color: #e50914; font-weight: 900; font-size: 1.5rem; padding: 1.25rem;">NETFLIX</div>
+        <div style="padding: 2rem; background: #f3f3f3; text-align: center; color: #111;">
+          <h3 class="red-flag-target" data-flag="nx2" style="margin-bottom: 0.5rem;">تم إيقاف عضويتك مؤقتاً لتعذر الدفع<span class="flag-marker">2</span></h3>
+          <button class="pro-submit-btn" style="background: #e50914; color: white; max-width: 350px; margin: 1rem auto 0 auto;" onclick="alert('محاكاة: صفحة مزيفة تجمع بيانات بطاقتك الائتمانية!')">تحديث بيانات البطاقة الآن</button>
         </div>
       </div>
 
       <div id="scenario-bank" class="simulator-window expl-view" style="display: none;">
-        <div style="background: #003b6f; color: white; padding: 2rem; text-align: center;">
-          <h2>🏦 نموذج البنك: خطورة طلب الرقم السري PIN</h2>
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="bk1">online-banking-portal-sa.info<span class="flag-marker">1</span></span></div></div>
+        <div style="background: #003b6f; color: white; padding: 1.25rem; font-weight: bold;">🏦 البوابة المصرفية - تحديث الهوية</div>
+        <div style="padding: 2rem; background: #f1f5f9; text-align: center; color: #1e293b;">
+          <p class="red-flag-target" data-flag="bk2" style="color: #dc2626; font-weight: bold; margin-bottom: 1rem;">⚠️ يلزم إدخال الرقم السري للصراف (PIN) وكود الأمان (CVV) لفك التجميد<span class="flag-marker">2</span></p>
+          <button class="pro-submit-btn" style="background: #003b6f; color: white; max-width: 350px; margin: 0 auto;" onclick="alert('محاكاة: البنوك لا تطلب أبداً الرقم السري PIN في أي صفحة!')">تأكيد التحديث وفك التجميد</button>
         </div>
       </div>
 
@@ -1192,6 +1129,20 @@
   <div id="toast" class="toast-msg">🎉 أحسنت! +10 نقاط</div>
 
   <script>
+    // Universal list of all scenario IDs
+    const ALL_SCENARIOS = [
+      'chall_friend_otp', 'chall_fc24', 'chall_brawl', 'chall_game_hack', 'chall_steam_trade', 'chall_job_whatsapp',
+      'roblox', 'fc24_expl', 'fortnite', 'pubg', 'minecraft', 'brawl_expl', 'valorant',
+      'aramex', 'netflix', 'bank'
+    ];
+
+    function hideAllScenarios() {
+      ALL_SCENARIOS.forEach(id => {
+        const el = document.getElementById('scenario-' + id);
+        if (el) el.style.display = 'none';
+      });
+    }
+
     // Audio synthesizer for pleasant gamified sounds
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     function playBeep(success) {
@@ -1255,6 +1206,50 @@
       }
     };
 
+    const explanationFlagsData = {
+      roblox: [
+        { num: "1", title: "نطاق وهمي غير رسمي (.xyz)", desc: "روبلوكس لا تملك أي موقع باسم free-robux-generator." },
+        { num: "2", title: "طلب كلمة السر (أكبر فخ!)", desc: "روبلوكس لا تطلب كلمة السر لمنحك هدايا، بل لسرقة حسابك." },
+        { num: "3", title: "فخ إدخال رقم الهاتف (Human Verification)", desc: "حيلة للاشتراك في خدمات تسحب رصيد شريحة الجوال أسبوعياً." }
+      ],
+      fc24_expl: [
+        { num: "1", title: "نطاق مزيف (.cc)", desc: "الموقع لا ينتمي لشركة EA الرسمية (ea.com)." },
+        { num: "2", title: "طلب الرمز السري الاحتياطي (Backup Code)", desc: "يمكن السارق من فتح النادي وبيع جميع لاعبيك وتحويل الكوينز لحسابه." }
+      ],
+      fortnite: [
+        { num: "1", title: "موقع مزيف باسم إبيك جيمز", desc: "النطاق الرسمي الوحيد هو epicgames.com." },
+        { num: "2", title: "طلب كود التحقق 2FA", desc: "لتجاوز الحماية الثنائية وسرقة الحساب فوراً." }
+      ],
+      pubg: [
+        { num: "1", title: "نطاق وهمي (.cc)", desc: "ببجي موبايل الرسمية لا توزع شدات عبر مواقع خارجية مجانية." },
+        { num: "2", title: "تسجيل دخول وهمي بالفيسبوك", desc: "صفحة مزيفة تحصد بيانات حسابك الشخصي في فيسبوك." }
+      ],
+      minecraft: [
+        { num: "1", title: "نطاق مجاني مشبوه (.xyz)", desc: "الموقع لا يتبع لمايكروسوفت أو ماينكرافت الرسمية." },
+        { num: "2", title: "طلب كلمة مرور مايكروسوفت", desc: "لسرقة حسابك الأصلي ولعبة ماينكرافت والسيطرة على إيميلك." }
+      ],
+      brawl_expl: [
+        { num: "1", title: "موقع احتيالي (.xyz)", desc: "سوبرسيل لا توزع جواهر خارج اللعبة الرسمية." },
+        { num: "2", title: "طلب رمز التحقق لـ Supercell ID", desc: "كود التحقق يتيح للمخترق ربط حسابك بجهازه وسرقته." }
+      ],
+      valorant: [
+        { num: "1", title: "مولد VP وهمي (.cc)", desc: "Riot Games تحظر جميع مواقع المولدات الخارجية." },
+        { num: "2", title: "طلب بيانات حساب Riot Games", desc: "لسرقة سكناتك ورتبتك التنافسية في فالورانت." }
+      ],
+      aramex: [
+        { num: "1", title: "نطاق احتيالي (.xyz)", desc: "الموقع ليس aramex.com بل موقع تصيد مجهول." },
+        { num: "2", title: "فخ المبلغ البسيط (7.5 ريال)", desc: "طلب مبلغ زهيد لا يثير الشك لسرقة كامل أرقام البطاقة البنكية." }
+      ],
+      netflix: [
+        { num: "1", title: "تلاعب بحروف الاسم (netfl1x)", desc: "استبدال حرف L برقم 1 لخداع القارئ السريع." },
+        { num: "2", title: "التهديد بإيقاف العضوية فوراً", desc: "لإثارة القلق ودفع الضحية لتسجيل بطاقته البنكية بسرعة." }
+      ],
+      bank: [
+        { num: "1", title: "موقع بنكي بدون حماية ونطاق وهمي", desc: "المواقع البنكية الحقيقية محمية بنطاقات رسمية مشفرة." },
+        { num: "2", title: "طلب الرقم السري للبطاقة (PIN)", desc: "البنوك لا تطلب أبداً الرقم السري للصراف في أي صفحة." }
+      ]
+    };
+
     function huntFlag(flagId, explanation) {
       const q = questionRequirements[currentScenario];
       if (!q) return;
@@ -1307,6 +1302,22 @@
         <p style="color: #f1f5f9;">${explanation}</p>
       `;
       container.prepend(card);
+    }
+
+    function renderExplanationSidebar() {
+      const container = document.getElementById('flag-container');
+      container.innerHTML = '';
+      const list = explanationFlagsData[currentScenario] || [];
+
+      list.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'flag-card';
+        div.innerHTML = `
+          <h4>🚩 علامة رقم ${item.num}: ${item.title}</h4>
+          <p>${item.desc}</p>
+        `;
+        container.appendChild(div);
+      });
     }
 
     function giveHint() {
@@ -1372,10 +1383,13 @@
 
     function switchChallengeLevel(level) {
       currentScenario = level;
+      hideAllScenarios();
+
+      const el = document.getElementById(`scenario-${level}`);
+      if (el) el.style.display = 'block';
+
       ['chall_friend_otp', 'chall_fc24', 'chall_brawl', 'chall_game_hack', 'chall_steam_trade', 'chall_job_whatsapp'].forEach(l => {
-        const el = document.getElementById(`scenario-${l}`);
         const tab = document.getElementById(`tab-${l}`);
-        if (el) el.style.display = (l === level ? 'block' : 'none');
         if (tab) tab.classList.toggle('active', l === level);
       });
 
@@ -1391,13 +1405,18 @@
 
     function switchScenario(scenario) {
       currentScenario = scenario;
-      const allScenarios = ['roblox', 'fc24_expl', 'fortnite', 'pubg', 'minecraft', 'brawl_expl', 'valorant', 'aramex', 'netflix', 'bank'];
-      allScenarios.forEach(s => {
-        const el = document.getElementById(`scenario-${s}`);
+      hideAllScenarios();
+
+      const el = document.getElementById(`scenario-${scenario}`);
+      if (el) el.style.display = 'block';
+
+      const allTabs = ['roblox', 'fc24_expl', 'fortnite', 'pubg', 'minecraft', 'brawl_expl', 'valorant', 'aramex', 'netflix', 'bank'];
+      allTabs.forEach(s => {
         const tab = document.getElementById(`tab-${s}`);
-        if (el) el.style.display = (s === scenario ? 'block' : 'none');
         if (tab) tab.classList.toggle('active', s === scenario);
       });
+
+      renderExplanationSidebar();
     }
 
     function toggleInspector(checked) {
