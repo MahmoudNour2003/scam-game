@@ -19,7 +19,7 @@
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
       
-      /* Gaming Brand Themes */
+      /* Brand Themes */
       --roblox-blue: #00a2ff;
       --fortnite-purple: #9333ea;
       --pubg-gold: #f59e0b;
@@ -27,7 +27,9 @@
       --minecraft-green: #52a435;
       --brawl-yellow: #ffc107;
       --valorant-red: #ff4655;
-      --steam-slate: #171a21;
+      --aramex-red: #e31837;
+      --netflix-red: #e50914;
+      --bank-blue: #003b6f;
     }
 
     * {
@@ -400,7 +402,7 @@
       display: inline-block;
     }
 
-    /* GAME FORM STYLES */
+    /* FORM & CONTAINER STYLES */
     .game-body-container {
       padding: 2rem 1.5rem;
       min-height: 480px;
@@ -412,7 +414,7 @@
 
     .pro-glass-card {
       width: 100%;
-      max-width: 550px;
+      max-width: 580px;
       border-radius: 16px;
       padding: 2rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
@@ -443,6 +445,11 @@
       font-size: 0.95rem;
     }
 
+    .form-row-pro {
+      display: flex;
+      gap: 0.75rem;
+    }
+
     .pro-submit-btn {
       width: 100%;
       padding: 0.95rem;
@@ -464,7 +471,95 @@
       filter: brightness(1.1);
     }
 
-    /* BRAND THEMES */
+    /* SPECIFIC COMPANY THEMES */
+    /* ARAMEX THEME */
+    .aramex-header-bar {
+      background: var(--aramex-red);
+      padding: 1rem 1.5rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 900;
+    }
+    .aramex-body-style {
+      background: #f8fafc;
+      color: #1e293b;
+      padding: 2rem 1.5rem;
+    }
+    .aramex-card-style {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      max-width: 580px;
+      margin: 0 auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+    .aramex-card-style .form-group-pro label {
+      color: #334155;
+    }
+    .aramex-card-style input {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+
+    /* NETFLIX THEME */
+    .netflix-header-bar {
+      background: #000000;
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .netflix-body-style {
+      background: #141414;
+      color: #ffffff;
+      padding: 2.5rem 1.5rem;
+    }
+    .netflix-card-style {
+      background: #181818;
+      border: 1px solid #282828;
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* BANK THEME */
+    .bank-header-bar {
+      background: var(--bank-blue);
+      color: white;
+      padding: 1.2rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bank-body-style {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2.5rem 1.5rem;
+    }
+    .bank-card-style {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 560px;
+      margin: 0 auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .bank-card-style .form-group-pro label {
+      color: #1e293b;
+    }
+    .bank-card-style input {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+
+    /* BRAND THEMES (GAMES) */
     .roblox-theme { background: linear-gradient(180deg, #191b1d 0%, #111215 100%); color: white; }
     .roblox-card { background: #1e2024; border: 2px solid #2e3035; }
 
@@ -963,7 +1058,7 @@
         </div>
       </div>
 
-      <!-- ================= EXPLANATION SCENARIOS (TEACHER DEMOS) ================= -->
+      <!-- ================= EXPLANATION SCENARIOS (GAMES) ================= -->
 
       <!-- 1. ROBLOX EXPLANATION -->
       <div id="scenario-roblox" class="simulator-window expl-view" style="display: none;">
@@ -1080,31 +1175,229 @@
         </div>
       </div>
 
-      <!-- SERVICES EXPLANATION -->
+      <!-- ================= EXPLANATION SCENARIOS (SERVICES) ================= -->
+
+      <!-- 1. ARAMEX DETAILED FORM -->
       <div id="scenario-aramex" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="ax1">aramex-sa-delivery.xyz<span class="flag-marker">1</span></span></div></div>
-        <div style="background: #e31837; color: white; padding: 1.25rem; font-weight: bold;">aramex | خدمة التوصيل السريع</div>
-        <div style="padding: 2rem; background: #f8fafc; text-align: center; color: #1e293b;">
-          <p class="red-flag-target" data-flag="ax2" style="margin-bottom: 1rem; font-size: 1rem;"><strong>عميلنا العزيز،</strong> طردك معلق ويلزم دفع 7.50 ريال لتأكيد العنوان.<span class="flag-marker">2</span></p>
-          <button class="pro-submit-btn" style="background: #e31837; color: white; max-width: 350px; margin: 0 auto;" onclick="alert('محاكاة: فخ المبلغ البسيط لسرقة أرقام البطاقة البنكية!')">دفع 7.50 ريال وتأكيد العنوان</button>
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span class="ssl-icon">⚠️ غير آمن</span>
+            <span>http://</span>
+            <span class="red-flag-target fake-domain" data-flag="ax1">aramex-sa-delivery-tracking.xyz/pay-fees.php<span class="flag-marker">1</span></span>
+          </div>
+        </div>
+
+        <div class="aramex-header-bar">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.6rem; letter-spacing: -1px;">aramex</span>
+            <span style="font-size: 0.85rem; opacity: 0.9;">| خدمة التوصيل السريع</span>
+          </div>
+          <span style="font-size: 0.8rem; background: rgba(0,0,0,0.25); padding: 3px 8px; border-radius: 4px;">رقم الشحنة: #SA-894210</span>
+        </div>
+
+        <div class="aramex-body-style">
+          <div class="aramex-card-style">
+            <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem; font-size: 0.85rem;">
+              <div style="margin-bottom: 0.25rem;">
+                <strong>المرسل:</strong>
+                <span class="red-flag-target" data-flag="ax2" style="direction: ltr; font-weight: bold; color: #dc2626;">
+                  خدمة عملاء أرامكس &lt;support-notice@delivery-sa-notification.top&gt;
+                  <span class="flag-marker">2</span>
+                </span>
+              </div>
+              <div><strong>الموضوع:</strong> ⚠️ عاجل: تعذر تسليم طردك بسبب خطأ في العنوان ورسوم معالجة متبقية</div>
+            </div>
+
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
+              <span class="red-flag-target" data-flag="ax3">
+                مرحباً عميلنا العزيز،
+                <span class="flag-marker">3</span>
+              </span>
+              وصلت شحنتك إلى مستودع التوزيع الرئيسي، ولكن تعذر إرسال مندوب التوصيل نظراً لعدم اكتمال العنوان ووجود رسوم شحن إدارية متبقية بقيمة <strong>7.50 ريال</strong>.
+            </p>
+
+            <form onsubmit="event.preventDefault(); alert('محاكاة: في الواقع تم سرقة بيانات بطاقتك البنكية ورقم هاتفك!');">
+              <div class="form-group-pro">
+                <label>عنوان التوصيل والمنزل:</label>
+                <input type="text" placeholder="المدينة، اسم الحي، الشارع" value="الرياض - حي النرجس">
+              </div>
+
+              <div class="form-group-pro">
+                <label>اسم حامل البطاقة (كما يظهر على البطاقة):</label>
+                <input type="text" placeholder="FULL NAME" value="MOHAMMED ALI">
+              </div>
+
+              <div class="form-group-pro">
+                <label class="red-flag-target" data-flag="ax4" style="color: #dc2626; font-weight: bold;">
+                  رقم البطاقة البنكية (16 رقم):
+                  <span class="flag-marker">4</span>
+                </label>
+                <input type="text" placeholder="4111 2222 3333 4444" maxlength="19" value="4588 9201 3847 1029">
+              </div>
+
+              <div class="form-row-pro">
+                <div class="form-group-pro" style="flex: 1;">
+                  <label>تاريخ الانتهاء:</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5" value="08/28">
+                </div>
+                <div class="form-group-pro" style="flex: 1;">
+                  <label class="red-flag-target" data-flag="ax5" style="color: #dc2626; font-weight: bold;">
+                    رمز الأمان (CVV):
+                    <span class="flag-marker">5</span>
+                  </label>
+                  <input type="password" placeholder="3 أرقام" maxlength="3" value="849">
+                </div>
+              </div>
+
+              <button class="pro-submit-btn" style="background: var(--aramex-red); color: white;">
+                📲 سداد 7.50 ريال وتأكيد موعد التوصيل
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
+      <!-- 2. NETFLIX DETAILED FORM -->
       <div id="scenario-netflix" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="nx1">netfl1x-subscription-update.cc<span class="flag-marker">1</span></span></div></div>
-        <div style="background: #000; color: #e50914; font-weight: 900; font-size: 1.5rem; padding: 1.25rem;">NETFLIX</div>
-        <div style="padding: 2rem; background: #f3f3f3; text-align: center; color: #111;">
-          <h3 class="red-flag-target" data-flag="nx2" style="margin-bottom: 0.5rem;">تم إيقاف عضويتك مؤقتاً لتعذر الدفع<span class="flag-marker">2</span></h3>
-          <button class="pro-submit-btn" style="background: #e50914; color: white; max-width: 350px; margin: 1rem auto 0 auto;" onclick="alert('محاكاة: صفحة مزيفة تجمع بيانات بطاقتك الائتمانية!')">تحديث بيانات البطاقة الآن</button>
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span>🔒 https://</span>
+            <span class="red-flag-target fake-domain" data-flag="nx1">netfl1x-subscription-update.cc/verify-billing<span class="flag-marker">1</span></span>
+          </div>
+        </div>
+
+        <div class="netflix-header-bar">
+          <span style="color: var(--netflix-red); font-size: 1.8rem; font-weight: 900; letter-spacing: 1px;">NETFLIX</span>
+          <span style="color: #8c8c8c; font-size: 0.85rem;">مركز المساعدة والحساب</span>
+        </div>
+
+        <div class="netflix-body-style">
+          <div class="netflix-card-style">
+            <div style="border-bottom: 1px solid #333; padding-bottom: 0.75rem; margin-bottom: 1.25rem; font-size: 0.85rem;">
+              <div style="color: #aaa; margin-bottom: 0.25rem;">
+                <strong>المرسل:</strong>
+                <span class="red-flag-target" data-flag="nx2" style="direction: ltr; color: #f87171;">
+                  Netflix Billing &lt;billing-alert@netfl1x-billing-center.net&gt;
+                  <span class="flag-marker">2</span>
+                </span>
+              </div>
+              <div style="color: #e50914; font-weight: bold;">🚨 تنبيه تعليق الحساب: تعذر معالجة دفعة الاشتراك الشهرية</div>
+            </div>
+
+            <h2 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff;">تم إيقاف عضويتك مؤقتاً</h2>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #aaa; margin-bottom: 1.25rem;">
+              نواجه مشكلة في معالجة معلومات الدفع الخاصة ببطاقتك المسجلة. يرجى تحديث تفاصيل الدفع لتفادي إلغاء الحساب وحذف قوائمك خلال 24 ساعة.
+            </p>
+
+            <form onsubmit="event.preventDefault(); alert('محاكاة: تم إرسال كلمة المرور وبيانات بطاقتك للمحتال!');">
+              <div class="form-group-pro">
+                <label>البريد الإلكتروني لحساب نتفليكس:</label>
+                <input type="email" value="student_family@gmail.com" readonly>
+              </div>
+
+              <div class="form-group-pro">
+                <label>كلمة مرور حساب نتفليكس:</label>
+                <input type="password" value="••••••••••••" readonly>
+              </div>
+
+              <div class="form-group-pro">
+                <label class="red-flag-target" data-flag="nx3" style="color: #f87171;">
+                  رقم البطاقة الائتمانية الجديدة:
+                  <span class="flag-marker">3</span>
+                </label>
+                <input type="text" placeholder="4000 1234 5678 9010" value="5200 4810 9382 7104">
+              </div>
+
+              <div class="form-row-pro">
+                <div class="form-group-pro" style="flex: 1;">
+                  <label>تاريخ الانتهاء:</label>
+                  <input type="text" placeholder="MM/YY" value="11/27">
+                </div>
+                <div class="form-group-pro" style="flex: 1;">
+                  <label class="red-flag-target" data-flag="nx4" style="color: #f87171;">
+                    رمز الأمان (CVV):
+                    <span class="flag-marker">4</span>
+                  </label>
+                  <input type="password" placeholder="3 أرقام" value="492">
+                </div>
+              </div>
+
+              <button class="pro-submit-btn" style="background: var(--netflix-red); color: white;">
+                تحديث بيانات البطاقة ومتابعة المشاهدة
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
+      <!-- 3. BANK DETAILED FORM -->
       <div id="scenario-bank" class="simulator-window expl-view" style="display: none;">
-        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="bk1">online-banking-portal-sa.info<span class="flag-marker">1</span></span></div></div>
-        <div style="background: #003b6f; color: white; padding: 1.25rem; font-weight: bold;">🏦 البوابة المصرفية - تحديث الهوية</div>
-        <div style="padding: 2rem; background: #f1f5f9; text-align: center; color: #1e293b;">
-          <p class="red-flag-target" data-flag="bk2" style="color: #dc2626; font-weight: bold; margin-bottom: 1rem;">⚠️ يلزم إدخال الرقم السري للصراف (PIN) وكود الأمان (CVV) لفك التجميد<span class="flag-marker">2</span></p>
-          <button class="pro-submit-btn" style="background: #003b6f; color: white; max-width: 350px; margin: 0 auto;" onclick="alert('محاكاة: البنوك لا تطلب أبداً الرقم السري PIN في أي صفحة!')">تأكيد التحديث وفك التجميد</button>
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span class="ssl-icon">⚠️ غير آمن</span>
+            <span>http://</span>
+            <span class="red-flag-target fake-domain" data-flag="bk1">online-banking-portal-sa-verify.info/login.php<span class="flag-marker">1</span></span>
+          </div>
+        </div>
+
+        <div class="bank-header-bar">
+          <div style="font-weight: 800; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>🏦</span>
+            <span>البوابة الموحدة للخدمات المصرفية والأفراد</span>
+          </div>
+          <span style="font-size: 0.75rem; background: #0284c7; padding: 3px 8px; border-radius: 4px;">نظام الحماية والتحديث</span>
+        </div>
+
+        <div class="bank-body-style">
+          <div class="bank-card-style">
+            <div style="text-align: center; margin-bottom: 1.25rem;">
+              <h3 style="color: #003b6f; font-size: 1.2rem; margin-bottom: 0.35rem;">تحديث بيانات الحساب والهوية الوطنية</h3>
+              <p class="red-flag-target" data-flag="bk2" style="font-size: 0.85rem; color: #dc2626; font-weight: bold; background: #fee2e2; padding: 0.5rem; border-radius: 6px; border: 1px solid #fca5a5;">
+                ⚠️ بموجب التعليمات المصرفية، سيتم تجميد البطاقات والحساب عند عدم التحديث اليوم
+                <span class="flag-marker">2</span>
+              </p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('محاكاة: البنوك تحذر بشدة! إدخال الرقم السري PIN يسحب جميع أموال حسابك!');">
+              <div class="form-group-pro">
+                <label>رقم الهوية الوطنية / الإقامة:</label>
+                <input type="text" placeholder="10xxxxxxxx" value="1098765432">
+              </div>
+
+              <div class="form-group-pro">
+                <label>اسم المستخدم في تطبيق البنك:</label>
+                <input type="text" value="user_bank_student">
+              </div>
+
+              <div class="form-group-pro">
+                <label>كلمة مرور الحساب المصرفي:</label>
+                <input type="password" value="••••••••••••">
+              </div>
+
+              <div class="form-group-pro">
+                <label class="red-flag-target" data-flag="bk3" style="color: #dc2626; font-weight: 800;">
+                  الرقم السري لبطاقة الصراف (ATM PIN - 4 أرقام):
+                  <span class="flag-marker">3</span>
+                </label>
+                <input type="password" placeholder="••••" maxlength="4" value="1234">
+              </div>
+
+              <div class="form-group-pro">
+                <label class="red-flag-target" data-flag="bk4" style="color: #dc2626; font-weight: 800;">
+                  رمز الأمان الخلفي للبطاقة (CVV - 3 أرقام):
+                  <span class="flag-marker">4</span>
+                </label>
+                <input type="password" placeholder="•••" maxlength="3" value="987">
+              </div>
+
+              <button class="pro-submit-btn" style="background: var(--bank-blue); color: white;">
+                تأكيد التحديث وفك تجميد الحساب
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -1237,16 +1530,23 @@
         { num: "2", title: "طلب بيانات حساب Riot Games", desc: "لسرقة سكناتك ورتبتك التنافسية في فالورانت." }
       ],
       aramex: [
-        { num: "1", title: "نطاق احتيالي (.xyz)", desc: "الموقع ليس aramex.com بل موقع تصيد مجهول." },
-        { num: "2", title: "فخ المبلغ البسيط (7.5 ريال)", desc: "طلب مبلغ زهيد لا يثير الشك لسرقة كامل أرقام البطاقة البنكية." }
+        { num: "1", title: "نطاق احتيالي (.xyz)", desc: "الموقع ليس aramex.com بل موقع تصيد مجهول مسجل بنطاق رخيص." },
+        { num: "2", title: "إيميل مرسل وهمي (.top)", desc: "عنوان بريد لا يمت لشركة أرامكس الرسمية بأي صلة." },
+        { num: "3", title: "تحية عامة مبهمة", desc: "الشركات الرسمية التي تشحن لك فعلياً تملك اسمك الكامل ورقم جوالك." },
+        { num: "4", title: "طلب رقم البطاقة البنكية", desc: "فخ المبلغ البسيط (7.5 ريال) لسرقة أرقام البطاقة الـ 16 كاملة." },
+        { num: "5", title: "طلب كود الأمان السري (CVV)", desc: "لسحب مبالغ مالية فورية من حسابك البنكي." }
       ],
       netflix: [
         { num: "1", title: "تلاعب بحروف الاسم (netfl1x)", desc: "استبدال حرف L برقم 1 لخداع القارئ السريع." },
-        { num: "2", title: "التهديد بإيقاف العضوية فوراً", desc: "لإثارة القلق ودفع الضحية لتسجيل بطاقته البنكية بسرعة." }
+        { num: "2", title: "عنوان بريد مريب وغير رسمي", desc: "ينتهي بنطاق احتيالي غير تابع لنتفليكس." },
+        { num: "3", title: "طلب إدخال البطاقة الائتمانية", desc: "صفحة وهمية تهدف للاستيلاء على بيانات بطاقتك البنكية." },
+        { num: "4", title: "طلب كود الأمان (CVV)", desc: "لسحب اشتراكات ومبالغ دون إذنك." }
       ],
       bank: [
-        { num: "1", title: "موقع بنكي بدون حماية ونطاق وهمي", desc: "المواقع البنكية الحقيقية محمية بنطاقات رسمية مشفرة." },
-        { num: "2", title: "طلب الرقم السري للبطاقة (PIN)", desc: "البنوك لا تطلب أبداً الرقم السري للصراف في أي صفحة." }
+        { num: "1", title: "موقع بنكي بدون تشفير ونطاق وهمي", desc: "المواقع البنكية الحقيقية محمية بنطاقات حكومية رسمية مشفرة." },
+        { num: "2", title: "التهديد بتجميد الحساب والبطاقات", desc: "إثارة الرعب لإجبارك على إدخال أسرارك البنكية دون تفكير." },
+        { num: "3", title: "طلب الرقم السري للبطاقة (ATM PIN)", desc: "أكبر فخ احتيالي! لا يوجد بنك في العالم يطلب رمز صرافك السري." },
+        { num: "4", title: "طلب كود الأمان الخلفي (CVV)", desc: "تفريغ حسابك المصرفي بالكامل بمجرد إدخال هذه الأرقام." }
       ]
     };
 
