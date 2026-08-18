@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معمل التوعية السيبرانية الاحترافي - درع الألعاب والشركات</title>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.4);
+      --danger: #ef4444;
+      --danger-glow: rgba(239, 68, 68, 0.4);
+      --warning: #f59e0b;
+      --success: #10b981;
+      --bg-dark: #090d16;
+      --bg-card: #111827;
+      --bg-card-hover: #1f2937;
+      --border-color: #374151;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      
+      /* Gaming Brand Themes */
+      --roblox-blue: #00a2ff;
+      --fortnite-purple: #9333ea;
+      --pubg-gold: #f59e0b;
+      --ea-green: #00e676;
+      --minecraft-green: #52a435;
+      --brawl-yellow: #ffc107;
+      --valorant-red: #ff4655;
+      --steam-slate: #171a21;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Tahoma, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.12) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .logo-icon {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      padding: 0.4rem 0.6rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .badge-live {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 10px var(--danger-glow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .controls-top {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #1f2937;
+      padding: 0.5rem 1.1rem;
+      border-radius: 2rem;
+      border: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 700;
+      color: #f87171;
+      transition: all 0.2s;
+    }
+
+    .toggle-switch:hover {
+      border-color: #ef4444;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+    }
+
+    .toggle-switch input {
+      cursor: pointer;
+      width: 1.25rem;
+      height: 1.25rem;
+      accent-color: #ef4444;
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      flex: 1;
+      padding: 1.5rem 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1100px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CATEGORY SELECTOR */
+    .category-selector {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+    }
+
+    .cat-btn {
+      background: #1f2937;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 0.65rem 1.3rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .cat-btn:hover {
+      background: #374151;
+      color: #fff;
+    }
+
+    .cat-btn.active {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: white;
+      border-color: #60a5fa;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .cat-btn.challenge-mode {
+      background: linear-gradient(135deg, #e11d48, #9333ea);
+      color: white;
+      border: 1px solid #f43f5e;
+    }
+    .cat-btn.challenge-mode.active {
+      box-shadow: 0 0 20px rgba(225, 29, 72, 0.5);
+      border-color: #fbbf24;
+    }
+
+    /* SUB TABS */
+    .tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: #111827;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 700;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn:hover {
+      background: #1f2937;
+      color: #fff;
+      border-color: #6b7280;
+    }
+
+    .tab-btn.active {
+      background: #1e3a8a;
+      color: #93c5fd;
+      border-color: #3b82f6;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    /* DASHBOARD / SCORE BOARD */
+    .challenge-dashboard {
+      background: linear-gradient(135deg, #1e1b4b 0%, #111827 100%);
+      border: 1px solid #6366f1;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .score-badge {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #111827;
+      font-size: 1.35rem;
+      font-weight: 900;
+      padding: 0.5rem 1.3rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* SIMULATOR WINDOW (BROWSER SHELL) */
+    .simulator-window {
+      background: #ffffff;
+      color: #111827;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .browser-bar {
+      background: #1e293b;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid #334155;
+      direction: ltr;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .url-bar {
+      flex: 1;
+      background: #0f172a;
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-family: 'Consolas', monospace;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      direction: ltr;
+    }
+
+    .url-bar .ssl-icon {
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    .url-bar .fake-domain {
+      font-weight: bold;
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.2);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* INTERACTIVE TARGETS & DISCOVERY */
+    .huntable-target {
+      cursor: pointer !important;
+      transition: all 0.2s;
+      user-select: none;
+      display: inline-block;
+      border-radius: 6px;
+      padding: 2px 4px;
+    }
+    .huntable-target:hover {
+      background: rgba(254, 240, 138, 0.35);
+      outline: 2px dashed #f59e0b;
+    }
+
+    .huntable-target.discovered {
+      background: #dcfce7 !important;
+      color: #14532d !important;
+      outline: 3px solid #10b981 !important;
+      position: relative;
+      animation: pulseGreen 0.5s ease-out;
+    }
+
+    .huntable-target.discovered::after {
+      content: "✅ +10 نقاط!";
+      position: absolute;
+      top: -14px;
+      left: 6px;
+      background: #10b981;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 2px 8px;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 20;
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* TEACHER INSPECTOR MODE */
+    .red-flag-target {
+      position: relative;
+      border-radius: 6px;
+    }
+
+    .inspector-active .huntable-target,
+    .inspector-active .red-flag-target {
+      background: #fee2e2 !important;
+      color: #7f1d1d !important;
+      outline: 2px dashed #ef4444 !important;
+      padding: 2px 5px;
+    }
+
+    .flag-marker {
+      display: none;
+      background: #ef4444;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      text-align: center;
+      line-height: 22px;
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .inspector-active .flag-marker {
+      display: inline-block;
+    }
+
+    /* ================= GAME FORM STYLES ================= */
+    .game-hero-header {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 900;
+    }
+
+    .game-body-container {
+      padding: 2rem 1.5rem;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pro-glass-card {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    /* Form Fields */
+    .form-group-pro {
+      margin-bottom: 1.1rem;
+      text-align: right;
+    }
+
+    .form-group-pro label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #cbd5e1;
+    }
+
+    .form-group-pro input,
+    .form-group-pro select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #374151;
+      background: #0f172a;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: border 0.2s;
+    }
+
+    .form-group-pro input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .pro-submit-btn {
+      width: 100%;
+      padding: 0.95rem;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.85rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pro-submit-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    /* PLATFORM SELECTOR ICONS */
+    .platform-selector {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .platform-chip {
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      cursor: pointer;
+    }
+
+    .platform-chip.selected {
+      background: var(--primary);
+      color: white;
+      border-color: #60a5fa;
+    }
+
+    /* SPECIFIC BRAND THEMES */
+    /* 1. ROBLOX */
+    .roblox-theme {
+      background: linear-gradient(180deg, #191b1d 0%, #111215 100%);
+      color: white;
+    }
+    .roblox-card {
+      background: #1e2024;
+      border: 2px solid #2e3035;
+    }
+
+    /* 2. FORTNITE */
+    .fortnite-theme {
+      background: radial-gradient(circle, #2e1065 0%, #0c0414 100%);
+      color: white;
+    }
+    .fortnite-card {
+      background: rgba(28, 15, 48, 0.95);
+      border: 2px solid #8b5cf6;
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+
+    /* 3. PUBG */
+    .pubg-theme {
+      background: #121212;
+      background-image: radial-gradient(#27272a 1px, transparent 1px);
+      background-size: 16px 16px;
+      color: white;
+    }
+    .pubg-card {
+      background: #1a1a1e;
+      border: 2px solid #f59e0b;
+    }
+
+    /* 4. EA SPORTS FC 24 */
+    .ea-theme {
+      background: radial-gradient(circle, #022c15 0%, #03140a 100%);
+      color: white;
+    }
+    .ea-card {
+      background: #062013;
+      border: 2px solid #00e676;
+      box-shadow: 0 0 25px rgba(0, 230, 118, 0.25);
+    }
+
+    /* 5. MINECRAFT */
+    .minecraft-theme {
+      background: #1b2616;
+      background-image: repeating-linear-gradient(0deg, #172013, #172013 20px, #1b2616 20px, #1b2616 40px);
+      color: white;
+    }
+    .minecraft-card {
+      background: #25331e;
+      border: 3px solid #52a435;
+      box-shadow: 0 8px 0 #182413;
+    }
+
+    /* 6. BRAWL STARS */
+    .brawl-theme {
+      background: radial-gradient(circle, #451a03 0%, #1e0b02 100%);
+      color: white;
+    }
+    .brawl-card {
+      background: #2d1204;
+      border: 2px solid #f59e0b;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+    }
+
+    /* 7. VALORANT & STEAM */
+    .valorant-theme {
+      background: #0f1923;
+      color: white;
+    }
+    .valorant-card {
+      background: #172430;
+      border: 2px solid #ff4655;
+    }
+
+    /* CHAT & WHATSAPP STYLES */
+    .chat-container {
+      background: #0b141a;
+      color: #e9edef;
+      padding: 1.25rem;
+      min-height: 420px;
+      background-image: radial-gradient(#1f2c34 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .chat-bubble-received {
+      background: #202c33;
+      padding: 0.85rem 1.1rem;
+      border-radius: 8px 8px 8px 0px;
+      max-width: 80%;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    .chat-time {
+      font-size: 0.7rem;
+      color: #8696a0;
+      text-align: left;
+      margin-top: 0.35rem;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-height: calc(100vh - 120px);
+      position: sticky;
+      top: 90px;
+    }
+
+    .sidebar h2 {
+      font-size: 1.15rem;
+      color: #60a5fa;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .flag-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      overflow-y: auto;
+      padding-left: 4px;
+    }
+
+    .flag-card {
+      background: #0b1120;
+      border: 1px solid var(--border-color);
+      padding: 0.9rem;
+      border-radius: 8px;
+      border-right: 4px solid var(--danger);
+      transition: transform 0.2s;
+    }
+
+    .flag-card:hover {
+      transform: translateX(-4px);
+      border-color: #60a5fa;
+    }
+
+    .flag-card h4 {
+      font-size: 0.92rem;
+      color: #f87171;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .flag-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10b981;
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: none;
+      z-index: 150;
+      animation: toastAnim 2.6s forwards;
+    }
+
+    @keyframes toastAnim {
+      0% { opacity: 0; transform: translate(-50%, 20px); }
+      15% { opacity: 1; transform: translate(-50%, 0); }
+      85% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-icon">🛡️</div>
+      <div>
+        <h1 style="font-size: 1.25rem; font-weight: 800;">معمل التوعية السيبرانية: درع الألعاب والشركات</h1>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">نماذج محاكاة احترافية لحماية الطلاب من سرقة الحسابات والأموال</p>
+      </div>
+      <span class="badge-live">نسخة تفاعلية 2026</span>
+    </div>
+
+    <div class="controls-top">
+      <label class="toggle-switch">
+        <input type="checkbox" id="inspector-toggle" onchange="toggleInspector(this.checked)">
+        <span>🔍 كشف الإجابات (للمعلم فقط)</span>
+      </label>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div>
+      <!-- MAIN CATEGORIES -->
+      <div class="category-selector">
+        <button class="cat-btn challenge-mode active" onclick="switchCategory('challenge')" id="cat-challenge">
+          🎯 أسئلة وتحديات التفكير للطلاب (Spot The Scam)
+        </button>
+        <button class="cat-btn" onclick="switchCategory('games')" id="cat-games">
+          🎮 موسوعة ألعاب المراهقين (Roblox, FC 24, Fortnite, PUBG...)
+        </button>
+        <button class="cat-btn" onclick="switchCategory('services')" id="cat-services">
+          🏢 خدمات الشركات والتطبيقات (Aramex, Netflix, Bank)
+        </button>
+      </div>
+
+      <!-- 1. CHALLENGE LEVEL TABS (6 UNIQUE THINKING QUESTIONS) -->
+      <div id="challenge-tabs" class="tabs-bar">
+        <button class="tab-btn active" onclick="switchChallengeLevel('chall_friend_otp')" id="tab-chall_friend_otp">
+          🧠 1. فخ "صاحبك" بالواتساب
+        </button>
+        <button class="tab-btn" onclick="switchChallengeLevel('chall_fc24')" id="tab-chall_fc24">
+          ⚽ 2. كوينز وبوينتس FC 24
+        </button>
+        <button class="tab-btn" onclick="switchChallengeLevel('chall_brawl')" id="tab-chall_brawl">
+          ⭐ 3. جواهر وسكنات براول ستارز
+        </button>
+        <button class="tab-btn" onclick="switchChallengeLevel('chall_game_hack')" id="tab-chall_game_hack">
+          ⚡ 4. هاك وسكربت ألعاب (Aimbot)
+        </button>
+        <button class="tab-btn" onclick="switchChallengeLevel('chall_steam_trade')" id="tab-chall_steam_trade">
+          🎮 5. تبادل سكنات ستيم و CS2
+        </button>
+        <button class="tab-btn" onclick="switchChallengeLevel('chall_job_whatsapp')" id="tab-chall_job_whatsapp">
+          💼 6. وظيفة التيك توك السريعة
+        </button>
+      </div>
+
+      <!-- 2. GAME EXPLANATION TABS (7 EXPANDED GAMES) -->
+      <div id="games-tabs" class="tabs-bar" style="display: none;">
+        <button class="tab-btn active" onclick="switchScenario('roblox')" id="tab-roblox">🟦 1. روبلوكس (Roblox)</button>
+        <button class="tab-btn" onclick="switchScenario('fc24_expl')" id="tab-fc24_expl">🟢 2. فيفا / FC 24</button>
+        <button class="tab-btn" onclick="switchScenario('fortnite')" id="tab-fortnite">🟪 3. فورتنايت (Fortnite)</button>
+        <button class="tab-btn" onclick="switchScenario('pubg')" id="tab-pubg">🟨 4. ببجي (PUBG Mobile)</button>
+        <button class="tab-btn" onclick="switchScenario('minecraft')" id="tab-minecraft">🟩 5. ماينكرافت (Minecraft)</button>
+        <button class="tab-btn" onclick="switchScenario('brawl_expl')" id="tab-brawl_expl">⭐ 6. براول ستارز (Brawl)</button>
+        <button class="tab-btn" onclick="switchScenario('valorant')" id="tab-valorant">🔴 7. فالورانت وستيم</button>
+      </div>
+
+      <!-- 3. SERVICES EXPLANATION TABS -->
+      <div id="services-tabs" class="tabs-bar" style="display: none;">
+        <button class="tab-btn active" onclick="switchScenario('aramex')" id="tab-aramex">📦 1. طرد أرامكس (Aramex)</button>
+        <button class="tab-btn" onclick="switchScenario('netflix')" id="tab-netflix">🎬 2. اشتراك نتفليكس (Netflix)</button>
+        <button class="tab-btn" onclick="switchScenario('bank')" id="tab-bank">🏦 3. البنك والهوية الوطنية</button>
+      </div>
+
+      <!-- SCORE DASHBOARD -->
+      <div id="challenge-dashboard-panel" class="challenge-dashboard">
+        <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+          <div class="score-badge">
+            <span>⭐ النقاط:</span>
+            <span id="score-counter">0</span>
+          </div>
+          <div>
+            <div style="font-weight: 800; color: #a5b4fc;" id="chall-status-text">🎯 حلل السيناريو وانقر على العلامات المريبة لكسب النقاط!</div>
+            <div style="font-size: 0.85rem; color: #cbd5e1;" id="chall-progress-text">المكتشف: 0 من 3 علامات</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="cat-btn" style="background: #312e81; color: #c7d2fe; border-color: #6366f1; padding: 0.4rem 0.9rem; font-size: 0.85rem;" onclick="giveHint()">
+            💡 طلب تلميح
+          </button>
+          <button class="cat-btn" style="background: #1f2937; color: #f87171; border-color: #ef4444; padding: 0.4rem 0.9rem; font-size: 0.85rem;" onclick="resetCurrentLevel()">
+            🔄 إعادة السؤال
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= CHALLENGE QUESTIONS (THINKING SCENARIOS) ================= -->
+
+      <!-- Q1: WHATSAPP FAKE FRIEND OTP -->
+      <div id="scenario-chall_friend_otp" class="simulator-window challenge-view">
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar"><span>📱 محادثة واتساب من رقم مجهول يحمل صورة زميلك في المدرسة (علي)</span></div>
+        </div>
+
+        <div class="chat-container">
+          <div style="max-width: 540px; margin: 0 auto;">
+            <div style="background: #111b21; padding: 0.75rem 1rem; border-radius: 10px; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: #00a884; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">👦</div>
+              <div>
+                <strong style="color: #e9edef;">علي (صاحبك بالمدرسة)</strong>
+                <div style="font-size: 0.75rem; color: #8696a0;">
+                  الرقم: 
+                  <span class="huntable-target red-flag-target" data-chall-flag="q1_1" onclick="huntFlag('q1_1', 'رقم دولي غريب (+234) لا يمت بصلة لرقم صديقك الحقيقي!')" style="color: #f87171; font-weight: bold; direction: ltr;">
+                    +234 812 948 201
+                    <span class="flag-marker">1</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-bubble-received">
+              هلا يا بطل! أنا علي، جوالي القديم انكسر وضاع، وهذا رقمي المؤقت الجديد.
+              <div class="chat-time">10:14 ص</div>
+            </div>
+
+            <div class="chat-bubble-received">
+              <span class="huntable-target red-flag-target" data-chall-flag="q1_2" onclick="huntFlag('q1_2', 'طلب كود التحقق (OTP) الذي وصل لهاتفك أنت! هدفه سرقة حساب الواتساب الخاص بك!')">
+                أنا بحاول أسترجع حسابي، وكتبت رقمك بالغلط فوصلك كود تحقق مكون من 6 أرقام في رسالة SMS على جوالك، ابعثلي الكود بسرعة ضروري جداً!
+                <span class="flag-marker">2</span>
+              </span>
+              <div class="chat-time">10:15 ص</div>
+            </div>
+
+            <div class="chat-bubble-received">
+              <span class="huntable-target red-flag-target" data-chall-flag="q1_3" onclick="huntFlag('q1_3', 'الضغط والاستعجال ورفض التسجيل الصوتي أو الاتصال حتى لا ينكشف صوته!')">
+                يلا بسرعة رد عليّ قبل ما يقفل الكود وتنتهي مدته! لا تتصل ما أقدر أرد الحين بس اكتبلي الأرقام!
+                <span class="flag-marker">3</span>
+              </span>
+              <div class="chat-time">10:16 ص</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2: EA SPORTS FC 24 COINS SCAM -->
+      <div id="scenario-chall_fc24" class="simulator-window challenge-view" style="display: none;">
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span>https://</span>
+            <span class="huntable-target red-flag-target fake-domain" data-chall-flag="qfc_1" onclick="huntFlag('qfc_1', 'نطاق الموقع (.cc) مزيف ولا ينتمي لموقع شركة EA الرسمي (ea.com)!')">
+              ea-sports-fc24-ultimate-coins-reward.cc/web-app
+              <span class="flag-marker">1</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="game-body-container ea-theme">
+          <div class="pro-glass-card ea-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+              <span style="color: #00e676; font-weight: 900; font-size: 1.4rem;">⚽ EA SPORTS FC™ 24</span>
+              <span style="background: rgba(0,230,118,0.2); color: #00e676; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">ULTIMATE TEAM</span>
+            </div>
+
+            <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.2rem;">🎁 شحن 1,000,000 كوينز + باقة نجوم التوتي TOTY مجاناً</h3>
+            <p style="color: #a7f3d0; font-size: 0.85rem; margin-bottom: 1.25rem;">سجل الدخول بحساب EA Web App لاستلام الكوينز في النادي الخاص بك فوراً:</p>
+
+            <form onsubmit="event.preventDefault(); wrongClickPrompt();">
+              <div class="form-group-pro">
+                <label>البريد الإلكتروني لحساب EA / PlayStation / Xbox:</label>
+                <input type="email" value="player_gamer@gmail.com" readonly>
+              </div>
+
+              <div class="form-group-pro">
+                <label>كلمة مرور حساب EA:</label>
+                <input type="password" value="••••••••••••" readonly>
+              </div>
+
+              <div class="form-group-pro">
+                <label>
+                  <span class="huntable-target red-flag-target" data-chall-flag="qfc_2" onclick="huntFlag('qfc_2', 'طلب الرمز السري للـ Ultimate Team وأكواد الأمان Backup Codes لتحويل ونهب جميع لاعبيك وكوينز حسابك!')" style="color: #fca5a5; font-weight: bold;">
+                    ⚠️ رمز الأمان الاحتياطي (Backup Code / Ultimate Security Question):
+                    <span class="flag-marker">2</span>
+                  </span>
+                </label>
+                <input type="password" value="789012" readonly>
+              </div>
+
+              <div class="huntable-target red-flag-target" data-chall-flag="qfc_3" onclick="huntFlag('qfc_3', 'شرط إيقاف تطبيق اللعبة لمدة 15 دقيقة ليتمكن السارق من الدخول للنادي وبيع اللاعبين دون أن تقاطعه!')" style="background: rgba(239, 68, 68, 0.2); border: 1px dashed #ef4444; padding: 0.65rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.8rem; color: #fca5a5;">
+                ⏳ <strong>تنبيه ضروري:</strong> يجب تسجيل الخروج من جهاز البلايستيشن وعدم فتح اللعبة لمدة 15 دقيقة حتى يكتمل تحويل الكوينز بنجاح!
+                <span class="flag-marker">3</span>
+              </div>
+
+              <button class="pro-submit-btn" style="background: #00e676; color: #052e16;">
+                ⚽ شحن 1,000,000 كوينز الآن
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3: BRAWL STARS SUPERCELL ID SCAM -->
+      <div id="scenario-chall_brawl" class="simulator-window challenge-view" style="display: none;">
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span>http://</span>
+            <span class="huntable-target red-flag-target fake-domain" data-chall-flag="qb_1" onclick="huntFlag('qb_1', 'نطاق مجاني مريب (.xyz) لا يتبع لشركة Supercell الرسمية!')">
+              supercell-brawlstars-gems-event2026.xyz/login
+              <span class="flag-marker">1</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="game-body-container brawl-theme">
+          <div class="pro-glass-card brawl-card">
+            <div style="text-align: center; margin-bottom: 1.25rem;">
+              <span style="font-size: 2.2rem;">⭐</span>
+              <h2 style="color: #f59e0b; font-size: 1.35rem; margin-top: 0.25rem;">BRAWL STARS: 2,000 GEMS FREE</h2>
+              <p style="color: #fde68a; font-size: 0.85rem;">عرض أبطال الدوري: احصل على سكنات ليجندري و 2000 جوهرة مجاناً</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); wrongClickPrompt();">
+              <div class="form-group-pro">
+                <label>البريد الإلكتروني المسجل في Supercell ID:</label>
+                <input type="email" value="brawler_pro@gmail.com" readonly>
+              </div>
+
+              <div class="form-group-pro">
+                <label>
+                  <span class="huntable-target red-flag-target" data-chall-flag="qb_2" onclick="huntFlag('qb_2', 'طلب رمز تسجيل الدخول لـ Supercell ID الذي يصل للإيميل لسرقة حساب براول ستارز وكلاش أوف كلانس معاً!')" style="color: #fca5a5; font-weight: bold;">
+                    ⚠️ رمز التحقق (Verification Code) المرسل لإيميلك:
+                    <span class="flag-marker">2</span>
+                  </span>
+                </label>
+                <input type="text" value="984210" readonly>
+              </div>
+
+              <div class="huntable-target red-flag-target" data-chall-flag="qb_3" onclick="huntFlag('qb_3', 'فخ إدخال رقم الهاتف لسحب رصيد شريحة ولي الأمر أسبوعياً!')" style="background: rgba(220, 38, 38, 0.25); border: 1px solid #dc2626; padding: 0.65rem; border-radius: 8px; font-size: 0.8rem; color: #fca5a5; margin-bottom: 1rem;">
+                📱 <strong>تأكيد الهوية:</strong> أدخل رقم هاتف ولي أمرك لتأكيد أنك لاعب بشري ولست روبوت.
+                <span class="flag-marker">3</span>
+              </div>
+
+              <button class="pro-submit-btn" style="background: #f59e0b; color: #451a03;">
+                ⭐ تفعيل واستلام 2,000 جوهرة
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4: FAKE GAME HACK & AIMBOT -->
+      <div id="scenario-chall_game_hack" class="simulator-window challenge-view" style="display: none;">
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span>http://</span>
+            <span class="huntable-target red-flag-target fake-domain" data-chall-flag="q2_1" onclick="huntFlag('q2_1', 'نطاق موقع مشبوه (.cc) يقدم برامج غير قانونية لسرقة الحواسيب!')">
+              free-game-hacks-aimbot-2026.cc/download-pc
+              <span class="flag-marker">1</span>
+            </span>
+          </div>
+        </div>
+
+        <div style="background: #0f172a; color: #fff; padding: 2rem 1.5rem; text-align: center;">
+          <div style="max-width: 540px; margin: 0 auto; background: #1e293b; border: 2px solid #38bdf8; border-radius: 12px; padding: 1.75rem;">
+            <h2 style="font-size: 1.35rem; color: #38bdf8; margin-bottom: 0.5rem;">⚡ برنامج هاك الألعاب الشامل (Aimbot + Wallhack + 120 FPS)</h2>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.25rem;">يعمل على جميع الألعاب (فورتنايت، روبلوكس، ببجي، فالورانت) مجاناً 100%</p>
+
+            <div class="huntable-target red-flag-target" data-chall-flag="q2_2" onclick="huntFlag('q2_2', 'طلب إيقاف برنامج الحماية ومضاد الفيروسات! أكبر دليل على أن الملف يحتوي على فايروس تروجان!')" style="background: rgba(220, 38, 38, 0.2); border: 1px dashed #ef4444; padding: 0.75rem; border-radius: 6px; margin-bottom: 1.25rem; font-size: 0.85rem; color: #fca5a5;">
+              ⚠️ <strong>تنبيه هام قبل التشغيل:</strong> يجب عليك إيقاف برنامج الحماية (Windows Defender / Antivirus) لأن النظام يكتشف البرنامج بالخطأ!
+              <span class="flag-marker">2</span>
+            </div>
+
+            <div style="background: #0f172a; padding: 1rem; border-radius: 8px; margin-bottom: 1.25rem; text-align: right;">
+              <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.5rem;">الملف للتحميل: <code>Aimbot_Pro_Setup.exe</code></p>
+              <div class="huntable-target red-flag-target" data-chall-flag="q2_3" onclick="huntFlag('q2_3', 'طلب تشغيل الملف بصلاحيات المسؤول (Run as Administrator) ليعطي الفيروس تحكماً كاملاً بجهازك!')" style="font-size: 0.8rem; color: #fbbf24;">
+                🛡️ خطوة أخيرة: انقر بيمين الفأرة واختر <strong>(Run as Administrator / تشغيل كمسؤول)</strong> لتفعيل السكربت.
+                <span class="flag-marker">3</span>
+              </div>
+            </div>
+
+            <button class="pro-submit-btn" style="background: #0284c7; color: white;" onclick="wrongClickPrompt()">
+              ⬇️ تحميل الهاك المجاني الآن (Setup.exe)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5: STEAM CS2 SKIN TRADE SCAM -->
+      <div id="scenario-chall_steam_trade" class="simulator-window challenge-view" style="display: none;">
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar">
+            <span>https://</span>
+            <span class="huntable-target red-flag-target fake-domain" data-chall-flag="qst_1" onclick="huntFlag('qst_1', 'رابط مزيف (steamcomnmunity) بحرف m زائد لسرقة حساب ستيم الخاص بك!')">
+              steamcomnmunity-trade-skins-cs2.ru/auth/login
+              <span class="flag-marker">1</span>
+            </span>
+          </div>
+        </div>
+
+        <div style="background: #171a21; color: #c7d5e0; padding: 2rem 1.5rem;">
+          <div style="max-width: 520px; margin: 0 auto; background: #1b2838; border: 1px solid #2a475e; border-radius: 10px; padding: 1.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+              <span style="font-size: 1.5rem;">🎮</span>
+              <strong style="color: #fff; font-size: 1.1rem;">Steam Community Trade Offer</strong>
+            </div>
+
+            <div class="huntable-target red-flag-target" data-chall-flag="qst_2" onclick="huntFlag('qst_2', 'عرض سكين نايف نادر بقيمة 400 دولار مجاناً كفخ إغراء بالطمع!')" style="background: #101822; padding: 0.75rem; border-radius: 6px; border: 1px solid #41607a; margin-bottom: 1rem;">
+              <p style="color: #66c0f4; font-size: 0.9rem; font-weight: bold;">🎁 عرض تبادل مجاني: سكين Karambit Doppler (بقيمة 450$)</p>
+              <p style="font-size: 0.8rem; color: #8f98a0; margin-top: 0.25rem;">تم إرسال هذا العرض لك كهدية فوز في مسابقة دوري الفرق.</p>
+              <span class="flag-marker">2</span>
+            </div>
+
+            <div class="huntable-target red-flag-target" data-chall-flag="qst_3" onclick="huntFlag('qst_3', 'طلب مفتاح Steam Web API Key لسرقة سكناتك تلقائياً عبر هجمات الـ API Scam!')" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; padding: 0.65rem; border-radius: 6px; font-size: 0.8rem; color: #fca5a5; margin-bottom: 1rem;">
+              🔑 <strong>توثيق الرابط:</strong> أدخل مفتاح Steam Web API Key الخاص بك لتأكيد عملية استلام السكن داخل حقيبتك.
+              <span class="flag-marker">3</span>
+            </div>
+
+            <button class="pro-submit-btn" style="background: #2a475e; color: #66c0f4;" onclick="wrongClickPrompt()">
+              تسجيل الدخول عبر ستيم واستلام الهدية
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6: TIKTOK 500 SAR JOB SCAM -->
+      <div id="scenario-chall_job_whatsapp" class="simulator-window challenge-view" style="display: none;">
+        <div class="browser-bar">
+          <div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+          <div class="url-bar"><span>💬 رسالة SMS / وتيليجرام لعرض وظيفة وهمية</span></div>
+        </div>
+
+        <div style="background: #18222d; color: #fff; padding: 2rem 1.5rem; min-height: 400px;">
+          <div style="max-width: 520px; margin: 0 auto; background: #213040; border-radius: 12px; padding: 1.75rem; border: 1px solid #2c4257;">
+            <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+              <div style="width: 45px; height: 45px; border-radius: 50%; background: #e11d48; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">💼</div>
+              <div>
+                <strong>إدارة التوظيف العالمية للمشاهير</strong>
+                <div style="font-size: 0.75rem; color: #94a3b8;">إعلان وظيفة منزلية للطلاب</div>
+              </div>
+            </div>
+
+            <div class="huntable-target red-flag-target" data-chall-flag="q3_1" onclick="huntFlag('q3_1', 'أجر مالي خيالي غير منطقي (500 ريال مقابل مجرد لايك) لجذب الضحية بالطمع!')" style="background: rgba(34, 197, 94, 0.15); border: 1px solid #22c55e; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem; color: #86efac;">
+              💰 <strong>الراتب:</strong> اربح 500 ريال يومياً بمجرد وضع لايك ومتابعة قنوات تيك توك وتقييم ألعاب!
+              <span class="flag-marker">1</span>
+            </div>
+
+            <div class="huntable-target red-flag-target" data-chall-flag="q3_2" onclick="huntFlag('q3_2', 'فخ دفع رسوم تسجيل مسبقة! الوظائف الحقيقية لا تطلب منك مالاً أبداً لتبدأ العمل!')" style="background: rgba(239, 68, 68, 0.2); border: 1px solid #dc2626; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.85rem; color: #fca5a5;">
+              ⚠️ <strong>شرط الانضمام:</strong> يجب إيداع مبلغ تأمين رمزي (50 ريال) في محفظتنا الرقمية لفتح حساب الموظف واستلام المهام.
+              <span class="flag-marker">2</span>
+            </div>
+
+            <div class="huntable-target red-flag-target" data-chall-flag="q3_3" onclick="huntFlag('q3_3', 'رابط قناة تيليجرام مجهولة لإخفاء هوية المحتالين وسرقة الأموال دون أثر!')" style="font-size: 0.85rem; color: #38bdf8;">
+              📲 تواصل مع المديرة سارة عبر تيليجرام: <code>t.me/easy_money_vip_earn2026</code>
+              <span class="flag-marker">3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= EXPLANATION SCENARIOS (FOR TEACHER DEMOS) ================= -->
+
+      <!-- 1. ROBLOX -->
+      <div id="scenario-roblox" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="1">free-robux-generator-2026.xyz<span class="flag-marker">1</span></span></div></div>
+        <div class="game-body-container roblox-theme">
+          <div class="pro-glass-card roblox-card">
+            <div style="color: #00a2ff; font-weight: 900; font-size: 1.3rem; margin-bottom: 0.5rem;">ROBLOX REWARDS</div>
+            <h2 style="font-size: 1.25rem; color: #fff; margin-bottom: 1rem;">🎁 مولد 10,000 روبوكس (R$) مجاني</h2>
+            <div class="form-group-pro">
+              <label class="red-flag-target" data-flag="2" style="color: #f87171;">كلمة المرور (Password):<span class="flag-marker">2</span></label>
+              <input type="password" value="••••••••••••" readonly>
+            </div>
+            <button class="pro-submit-btn" style="background: #00a2ff; color: white;">إرسال الروبوكس لحسابي</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. FC 24 EXPL -->
+      <div id="scenario-fc24_expl" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="fc1">ea-sports-fc24-coins.cc<span class="flag-marker">fc1</span></span></div></div>
+        <div class="game-body-container ea-theme">
+          <div class="pro-glass-card ea-card">
+            <h2 style="color: #00e676; font-size: 1.3rem; margin-bottom: 0.5rem;">⚽ FC 24: شحن 1,000,000 كوينز</h2>
+            <p style="font-size: 0.85rem; color: #a7f3d0; margin-bottom: 1rem;">شرح كيف يسرق المحتالون حسابات فيفا عبر طلب أكواد الأمان الاحتياطية لنهب النادي.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. FORTNITE -->
+      <div id="scenario-fortnite" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="5">fortnite-vbucks-gift.top<span class="flag-marker">5</span></span></div></div>
+        <div class="game-body-container fortnite-theme">
+          <div class="pro-glass-card fortnite-card">
+            <h2 style="color: #fbbf24; font-size: 1.3rem; margin-bottom: 0.5rem;">🎉 13,500 V-Bucks وسكنات نادرة</h2>
+            <div class="form-group-pro">
+              <label class="red-flag-target" data-flag="6" style="color: #f87171;">كود التحقق الثنائي (2FA):<span class="flag-marker">6</span></label>
+              <input type="password" value="123456" readonly>
+            </div>
+            <button class="pro-submit-btn" style="background: #8b5cf6; color: white;">شحن الـ V-Bucks</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. PUBG -->
+      <div id="scenario-pubg" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="8">pubgmobile-lucky-spin.cc<span class="flag-marker">8</span></span></div></div>
+        <div class="game-body-container pubg-theme">
+          <div class="pro-glass-card pubg-card">
+            <h2 style="color: #f59e0b; font-size: 1.3rem; margin-bottom: 0.5rem;">🎯 عجلة الحظ: ربحت 8,100 شدة UC</h2>
+            <div class="red-flag-target" data-flag="9" style="margin: 1rem 0;">
+              <button class="pro-submit-btn" style="background: #1877f2; color: white;">تسجيل الدخول بـ Facebook</button>
+              <span class="flag-marker">9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. MINECRAFT -->
+      <div id="scenario-minecraft" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="mc1">minecraft-free-cape-minecoins.xyz<span class="flag-marker">mc1</span></span></div></div>
+        <div class="game-body-container minecraft-theme">
+          <div class="pro-glass-card minecraft-card">
+            <h2 style="color: #52a435; font-size: 1.3rem; margin-bottom: 0.5rem;">🟩 كيب ماينكرافت و 5000 Minecoins</h2>
+            <p style="font-size: 0.85rem; color: #dcfce7; margin-bottom: 1rem;">يوضح كيف تسرق مواقع الكيبات حسابات مايكروسوفت وماينكرافت الأصلية.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. BRAWL STARS EXPL -->
+      <div id="scenario-brawl_expl" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="br1">supercell-brawlstars-gems.xyz<span class="flag-marker">br1</span></span></div></div>
+        <div class="game-body-container brawl-theme">
+          <div class="pro-glass-card brawl-card">
+            <h2 style="color: #f59e0b; font-size: 1.3rem; margin-bottom: 0.5rem;">⭐ براول ستارز 2000 جوهرة</h2>
+            <p style="font-size: 0.85rem; color: #fde68a; margin-bottom: 1rem;">يشرح خطورة إعطاء رمز التحقق المرسل للإيميل Supercell ID.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. VALORANT -->
+      <div id="scenario-valorant" class="simulator-window expl-view" style="display: none;">
+        <div class="browser-bar"><div class="browser-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div><div class="url-bar"><span class="red-flag-target fake-domain" data-flag="val1">valorant-riot-vp-generator.cc<span class="flag-marker">val1</span></span></div></div>
+        <div class="game-body-container valorant-theme">
+          <div class="pro-glass-card valorant-card">
+            <h2 style="color: #ff4655; font-size: 1.3rem; margin-bottom: 0.5rem;">🔴 فالورانت: 10,000 VP وسكنات فاندال</h2>
+            <p style="font-size: 0.85rem; color: #fecaca; margin-bottom: 1rem;">يوضح كيف تتم سرقة حسابات Riot Games عبر صفحات الدخول الزائفة.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div id="scenario-aramex" class="simulator-window expl-view" style="display: none;">
+        <div style="background: #e31837; color: white; padding: 2rem; text-align: center;">
+          <h2>📦 نموذج أرامكس: فخ الـ 7.5 ريال لسرقة البطاقة</h2>
+        </div>
+      </div>
+
+      <div id="scenario-netflix" class="simulator-window expl-view" style="display: none;">
+        <div style="background: #000; color: #e50914; padding: 2rem; text-align: center;">
+          <h2>🎬 نموذج نتفليكس: تزييف الرابط (netfl1x)</h2>
+        </div>
+      </div>
+
+      <div id="scenario-bank" class="simulator-window expl-view" style="display: none;">
+        <div style="background: #003b6f; color: white; padding: 2rem; text-align: center;">
+          <h2>🏦 نموذج البنك: خطورة طلب الرقم السري PIN</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <h2 id="sidebar-title">🎯 سجل الإجابات والعلامات</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;" id="sidebar-desc">
+          انقر فوق أي نص أو عنصر مريب في السؤال لكسب النقاط!
+        </p>
+      </div>
+
+      <div class="flag-list" id="flag-container">
+        <!-- Live Discovered Cards -->
+      </div>
+    </aside>
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast-msg">🎉 أحسنت! +10 نقاط</div>
+
+  <script>
+    // Audio synthesizer for pleasant gamified sounds
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep(success) {
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        if (success) {
+          osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
+          osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1);
+          gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.35);
+        } else {
+          osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.2);
+        }
+      } catch(e) {}
+    }
+
+    let totalScore = 0;
+    let currentCategory = 'challenge';
+    let currentScenario = 'chall_friend_otp';
+
+    const questionRequirements = {
+      chall_friend_otp: {
+        total: 3,
+        found: new Set(),
+        hint: "فكر: هل رقم الهاتف محلي أم رقم دولي غريب؟ ولماذا يطلب منك كود التحقق الخاص بجوالك أنت؟ ولماذا يرفض الاتصال؟"
+      },
+      chall_fc24: {
+        total: 3,
+        found: new Set(),
+        hint: "دقق في: رابط الموقع (.cc)، وطلب كود الأمان الاحتياطي (Backup Code)، وشرط عدم فتح اللعبة لمدة 15 دقيقة!"
+      },
+      chall_brawl: {
+        total: 3,
+        found: new Set(),
+        hint: "انتبه إلى: النطاق المجاني (.xyz)، وطلب رمز الـ Supercell ID المسجل بإيميلك، وطلب رقم هاتف ولي الأمر!"
+      },
+      chall_game_hack: {
+        total: 3,
+        found: new Set(),
+        hint: "انظر إلى: نطاق الموقع المريب (.cc)، والشرط الخطير بإيقاف برنامج الحماية Antivirus، وطلب تشغيل الملف كمسؤول!"
+      },
+      chall_steam_trade: {
+        total: 3,
+        found: new Set(),
+        hint: "فحص: الرابط الخادع بحرف m زائد (steamcomnmunity)، وإغراء سكين نايف 450$، وطلب مفتاح Steam API Key!"
+      },
+      chall_job_whatsapp: {
+        total: 3,
+        found: new Set(),
+        hint: "انتبه إلى: الراتب المبالغ فيه (500 ريال يومياً لمجرد لايك)، وطلب دفع 50 ريال تأمين، وحساب التيليجرام المجهول!"
+      }
+    };
+
+    function huntFlag(flagId, explanation) {
+      const q = questionRequirements[currentScenario];
+      if (!q) return;
+
+      if (q.found.has(flagId)) {
+        showToast("⚠️ لقد اكتشفت هذه العلامة بالفعل!");
+        return;
+      }
+
+      q.found.add(flagId);
+      totalScore += 10;
+      playBeep(true);
+
+      const targetEls = document.querySelectorAll(`[data-chall-flag="${flagId}"]`);
+      targetEls.forEach(el => el.classList.add('discovered'));
+
+      document.getElementById('score-counter').textContent = totalScore;
+      updateLevelProgress();
+
+      showToast("🎉 ذكاء ممتاز! +10 نقاط: " + explanation);
+      addSidebarCard(explanation);
+
+      if (q.found.size === q.total) {
+        setTimeout(() => {
+          showToast("🏆 إجابة كاملة عبقرية! اكتشفت كل الفخاخ في هذا السؤال! (+50 نقطة مكافأة)");
+          totalScore += 50;
+          document.getElementById('score-counter').textContent = totalScore;
+        }, 1000);
+      }
+    }
+
+    function updateLevelProgress() {
+      const q = questionRequirements[currentScenario];
+      if (!q) return;
+      document.getElementById('chall-progress-text').textContent = `المكتشف: ${q.found.size} من ${q.total} علامات`;
+      if (q.found.size === q.total) {
+        document.getElementById('chall-status-text').innerHTML = "🌟 <strong>ممتاز! أجبت عن السؤال بالكامل. اختر التحدي التالي من الأعلى!</strong>";
+      } else {
+        document.getElementById('chall-status-text').textContent = "🎯 حلل السيناريو وانقر على العلامات المريبة لكسب النقاط!";
+      }
+    }
+
+    function addSidebarCard(explanation) {
+      const container = document.getElementById('flag-container');
+      const card = document.createElement('div');
+      card.className = 'flag-card';
+      card.style.borderRightColor = '#10b981';
+      card.innerHTML = `
+        <h4 style="color: #34d399;">✅ اكتشاف ذكي (+10 نقاط)</h4>
+        <p style="color: #f1f5f9;">${explanation}</p>
+      `;
+      container.prepend(card);
+    }
+
+    function giveHint() {
+      const q = questionRequirements[currentScenario];
+      if (q) {
+        alert("💡 تلميح للمساعدة في التفكير:\n\n" + q.hint);
+      }
+    }
+
+    function resetCurrentLevel() {
+      const q = questionRequirements[currentScenario];
+      if (q) {
+        q.found.clear();
+        const targets = document.querySelectorAll('#scenario-' + currentScenario + ' .huntable-target');
+        targets.forEach(t => t.classList.remove('discovered'));
+        document.getElementById('flag-container').innerHTML = '';
+        updateLevelProgress();
+        showToast("🔄 تم تصفير المحاولات في هذا السؤال!");
+      }
+    }
+
+    function wrongClickPrompt() {
+      playBeep(false);
+      showToast("⚠️ انتبه! النقر على زر الإرسال أو الشحن يجعلك تقع في الفخ! ابحث عن العلامات التحذيرية المريبة وانقر عليها!");
+    }
+
+    function showToast(text) {
+      const t = document.getElementById('toast');
+      t.textContent = text;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2800);
+    }
+
+    function switchCategory(cat) {
+      currentCategory = cat;
+      const isChall = cat === 'challenge';
+      const isGames = cat === 'games';
+      const isServices = cat === 'services';
+
+      document.getElementById('cat-challenge').classList.toggle('active', isChall);
+      document.getElementById('cat-games').classList.toggle('active', isGames);
+      document.getElementById('cat-services').classList.toggle('active', isServices);
+
+      document.getElementById('challenge-tabs').style.display = isChall ? 'flex' : 'none';
+      document.getElementById('challenge-dashboard-panel').style.display = isChall ? 'flex' : 'none';
+      document.getElementById('games-tabs').style.display = isGames ? 'flex' : 'none';
+      document.getElementById('services-tabs').style.display = isServices ? 'flex' : 'none';
+
+      if (isChall) {
+        document.getElementById('sidebar-title').textContent = '🎯 سجل الإجابات والنقاط';
+        document.getElementById('sidebar-desc').textContent = 'انقر فوق أي علامة أو نص مريب في السؤال!';
+        switchChallengeLevel('chall_friend_otp');
+      } else if (isGames) {
+        document.getElementById('sidebar-title').textContent = '🚩 شرح موسوعة الألعاب';
+        document.getElementById('sidebar-desc').textContent = 'نماذج الشرح واستعراض الخدع أمام الفصل.';
+        switchScenario('roblox');
+      } else {
+        document.getElementById('sidebar-title').textContent = '🚩 شرح خدع الشركات';
+        document.getElementById('sidebar-desc').textContent = 'نماذج الشرح واستعراض الخدع أمام الفصل.';
+        switchScenario('aramex');
+      }
+    }
+
+    function switchChallengeLevel(level) {
+      currentScenario = level;
+      ['chall_friend_otp', 'chall_fc24', 'chall_brawl', 'chall_game_hack', 'chall_steam_trade', 'chall_job_whatsapp'].forEach(l => {
+        const el = document.getElementById(`scenario-${l}`);
+        const tab = document.getElementById(`tab-${l}`);
+        if (el) el.style.display = (l === level ? 'block' : 'none');
+        if (tab) tab.classList.toggle('active', l === level);
+      });
+
+      document.getElementById('flag-container').innerHTML = '';
+      const q = questionRequirements[level];
+      if (q) {
+        q.found.forEach(fid => {
+          addSidebarCard("علامة تم كشفها سابقاً في هذا السؤال");
+        });
+      }
+      updateLevelProgress();
+    }
+
+    function switchScenario(scenario) {
+      currentScenario = scenario;
+      const allScenarios = ['roblox', 'fc24_expl', 'fortnite', 'pubg', 'minecraft', 'brawl_expl', 'valorant', 'aramex', 'netflix', 'bank'];
+      allScenarios.forEach(s => {
+        const el = document.getElementById(`scenario-${s}`);
+        const tab = document.getElementById(`tab-${s}`);
+        if (el) el.style.display = (s === scenario ? 'block' : 'none');
+        if (tab) tab.classList.toggle('active', s === scenario);
+      });
+    }
+
+    function toggleInspector(checked) {
+      if (checked) {
+        document.body.classList.add('inspector-active');
+      } else {
+        document.body.classList.remove('inspector-active');
+      }
+    }
+
+    // Initialize
+    updateLevelProgress();
+  </script>
+</body>
+</html>
